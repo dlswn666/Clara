@@ -19,6 +19,8 @@ public class ClaraIntroThread extends Thread{
 
         try {
             Thread.sleep(3000);
+            msg.what = 1;
+            handler.sendEmptyMessage(msg.what);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

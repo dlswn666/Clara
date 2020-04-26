@@ -1,2 +1,8 @@
 rootProject.name='Clara'
 include ':app'
+include ':practice'
+include ':practice:practice_intro'
+include ':practice:myintent'
+include ':practice:parctice04_01'
+include ':practice:parctice04_01:myparctice'
+include ':practice:parctice04_02'
