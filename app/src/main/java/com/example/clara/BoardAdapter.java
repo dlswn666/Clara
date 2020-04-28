@@ -12,22 +12,27 @@ import java.util.ArrayList;
 
 public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder>{
 
-    ArrayList<Board> items = new ArrayList<Board>();
+    ArrayList<ClassBoard> items = new ArrayList<ClassBoard>();
 
 
-    public void addItem(Board item){
+    // 생성자
+    static BoardAdapter adapter;
+    public BoardAdapter() {this.adapter = this;};
+
+
+    public void addItem(ClassBoard item){
         items.add(item);
     }
 
-    public void setItems(ArrayList<Board> items){
+    public void setItems(ArrayList<ClassBoard> items){
         this.items = items;
     }
 
-    public Board getItem(int position){
+    public ClassBoard getItem(int position){
         return items.get(position);
     }
 
-    public void setItem (int position, Board item){
+    public void setItem (int position, ClassBoard item){
         items.set(position, item);
     }
 
@@ -43,7 +48,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Board item = items.get(position);
+        ClassBoard item = items.get(position);
         holder.setItem(item);
 
     }
@@ -66,9 +71,9 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder>{
 
         }
 
-        public void setItem(Board board){
+        public void setItem(ClassBoard board){
             tv_title.setText(board.getTitle());
-            tv_contens.setText(board.getContent());
+            tv_contens.setText(board.getContents());
         }
     }
 

@@ -20,7 +20,7 @@ import java.util.ListIterator;
 public class BoardActivity extends AppCompatActivity {
 
     public static final int sub = 1002;
-
+    BoardAdapter adapter;
     Button button;
 
     @Override
@@ -29,13 +29,6 @@ public class BoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_board);
 
         button = findViewById(R.id.button);
-
-        RecyclerView recyclerView = findViewById(R.id.rv);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-
-        BoardAdapter adapter = new BoardAdapter();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +41,5 @@ public class BoardActivity extends AppCompatActivity {
         });
 
 
-
-        recyclerView.setAdapter(adapter);
     }
 }
